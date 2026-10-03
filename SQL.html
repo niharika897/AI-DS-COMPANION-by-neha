@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL Learning | AI & DS Student Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">AI & DS Hub</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#viva">Viva</a>
+    </div>
+</nav>
+
+
+<!-- Hero -->
+<section class="learning-hero">
+
+    <p class="section-label">LEARNING RESOURCE</p>
+
+    <h1>🗄️ Learn SQL</h1>
+
+    <p>
+        Learn SQL step by step, from database basics to queries,
+        filtering, joins and data management.
+    </p>
+
+</section>
+
+
+<!-- Roadmap -->
+<section class="learning-section">
+
+    <h2>SQL Roadmap 🚀</h2>
+
+    <p class="learning-intro">
+        Follow these topics in order and build a strong foundation
+        in SQL and databases.
+    </p>
+
+    <div class="topic-grid">
+
+        <!-- Topic 1 -->
+        <div class="topic-card">
+
+            <div class="topic-number">01</div>
+
+            <h3>SQL Basics</h3>
+
+            <p>
+                Understand databases, tables and the purpose of SQL.
+            </p>
+
+            <ul>
+                <li>What is SQL?</li>
+                <li>What is a database?</li>
+                <li>Tables and records</li>
+                <li>SQL commands</li>
+            </ul>
+
+            <a href="#sql-basics" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 2 -->
+        <div class="topic-card">
+
+            <div class="topic-number">02</div>
+
+            <h3>SELECT & WHERE</h3>
+
+            <p>
+                Learn how to retrieve specific data from tables.
+            </p>
+
+            <ul>
+                <li>SELECT</li>
+                <li>FROM</li>
+                <li>WHERE</li>
+                <li>Comparison operators</li>
+            </ul>
+
+            <a href="#select-where" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 3 -->
+        <div class="topic-card">
+
+            <div class="topic-number">03</div>
+
+            <h3>Sorting & Filtering</h3>
+
+            <p>
+                Learn how to organize and filter database results.
+            </p>
+
+            <ul>
+                <li>ORDER BY</li>
+                <li>ASC & DESC</li>
+                <li>AND & OR</li>
+                <li>LIKE</li>
+            </ul>
+
+            <a href="#sorting-filtering" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 4 -->
+        <div class="topic-card">
+
+            <div class="topic-number">04</div>
+
+            <h3>INSERT, UPDATE & DELETE</h3>
+
+            <p>
+                Learn how to add, modify and remove data.
+            </p>
+
+            <ul>
+                <li>INSERT INTO</li>
+                <li>UPDATE</li>
+                <li>DELETE</li>
+                <li>Managing records</li>
+            </ul>
+
+            <a href="#data-modification" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 5 -->
+        <div class="topic-card">
+
+            <div class="topic-number">05</div>
+
+            <h3>Functions & Aggregation</h3>
+
+            <p>
+                Learn how to perform calculations on database data.
+            </p>
+
+            <ul>
+                <li>COUNT()</li>
+                <li>SUM()</li>
+                <li>AVG()</li>
+                <li>MAX() & MIN()</li>
+            </ul>
+
+            <a href="#functions" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 6 -->
+        <div class="topic-card">
+
+            <div class="topic-number">06</div>
+
+            <h3>GROUP BY & HAVING</h3>
+
+            <p>
+                Learn how to group data and filter grouped results.
+            </p>
+
+            <ul>
+                <li>GROUP BY</li>
+                <li>HAVING</li>
+                <li>Aggregate functions</li>
+                <li>Grouped queries</li>
+            </ul>
+
+            <a href="#group-by" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 7 -->
+        <div class="topic-card">
+
+            <div class="topic-number">07</div>
+
+            <h3>SQL Joins</h3>
+
+            <p>
+                Learn how to combine information from multiple tables.
+            </p>
+
+            <ul>
+                <li>INNER JOIN</li>
+                <li>LEFT JOIN</li>
+                <li>RIGHT JOIN</li>
+                <li>Joining tables</li>
+            </ul>
+
+            <a href="#joins" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+
+        <!-- Topic 8 -->
+        <div class="topic-card">
+
+            <div class="topic-number">08</div>
+
+            <h3>Keys & Database Design</h3>
+
+            <p>
+                Understand how tables are connected and organized.
+            </p>
+
+            <ul>
+                <li>Primary key</li>
+                <li>Foreign key</li>
+                <li>Relationships</li>
+                <li>Basic database design</li>
+            </ul>
+
+            <a href="#keys-design" class="topic-link">
+                Read Notes →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SQL Notes Section -->
+<section class="notes-section">
+
+    <div class="notes-container">
+
+        <p class="section-label">SQL NOTES</p>
+
+        <h2>Learn SQL Step by Step 📚</h2>
+
+        <p class="notes-intro">
+            These notes cover the important SQL concepts you need
+            to work with databases and write useful queries.
+        </p>
+
+
+        <!-- Topic 1 -->
+        <div class="note-block" id="sql-basics">
+
+            <h3>01. SQL Basics 🗄️</h3>
+
+            <p>
+                SQL stands for <strong>Structured Query Language</strong>.
+                It is used to communicate with databases and perform
+                operations on stored data.
+            </p>
+
+            <p>
+                A database contains tables, and tables contain rows
+                and columns.
+            </p>
+
+            <ul>
+                <li>Database → stores organized data</li>
+                <li>Table → stores related information</li>
+                <li>Row → represents one record</li>
+                <li>Column → represents a type of information</li>
+            </ul>
+
+            <pre><code>CREATE DATABASE college;
+
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);</code></pre>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>SQL is used to work with databases.</li>
+                    <li>Tables contain rows and columns.</li>
+                    <li>SQL commands perform different database operations.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 2 -->
+        <div class="note-block" id="select-where">
+
+            <h3>02. SELECT & WHERE 🔍</h3>
+
+            <p>
+                The <strong>SELECT</strong> statement is used to retrieve
+                data from a table.
+            </p>
+
+            <p>
+                The <strong>WHERE</strong> clause is used to filter records
+                based on a condition.
+            </p>
+
+            <pre><code>SELECT * FROM students;
+
+SELECT name, age
+FROM students
+WHERE age > 18;</code></pre>
+
+            <ul>
+                <li><strong>SELECT *</strong> → selects all columns</li>
+                <li><strong>SELECT name</strong> → selects a specific column</li>
+                <li><strong>WHERE</strong> → filters records</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>SELECT retrieves data.</li>
+                    <li>WHERE filters data.</li>
+                    <li>Conditions decide which records are returned.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 3 -->
+        <div class="note-block" id="sorting-filtering">
+
+            <h3>03. Sorting & Filtering 📊</h3>
+
+            <p>
+                SQL provides different commands for organizing and
+                filtering query results.
+            </p>
+
+            <pre><code>SELECT *
+FROM students
+ORDER BY age ASC;
+
+SELECT *
+FROM students
+WHERE name LIKE 'A%';</code></pre>
+
+            <ul>
+                <li><strong>ORDER BY</strong> → sorts results</li>
+                <li><strong>ASC</strong> → ascending order</li>
+                <li><strong>DESC</strong> → descending order</li>
+                <li><strong>LIKE</strong> → searches for patterns</li>
+                <li><strong>AND / OR</strong> → combines conditions</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>ORDER BY sorts data.</li>
+                    <li>ASC sorts from low to high.</li>
+                    <li>DESC sorts from high to low.</li>
+                    <li>LIKE is useful for pattern matching.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 4 -->
+        <div class="note-block" id="data-modification">
+
+            <h3>04. INSERT, UPDATE & DELETE ✏️</h3>
+
+            <p>
+                These commands are used to add, modify and remove
+                records from a table.
+            </p>
+
+            <pre><code>INSERT INTO students
+VALUES (1, 'Anu', 20);
+
+UPDATE students
+SET age = 21
+WHERE id = 1;
+
+DELETE FROM students
+WHERE id = 1;</code></pre>
+
+            <ul>
+                <li><strong>INSERT</strong> → adds new records</li>
+                <li><strong>UPDATE</strong> → changes existing records</li>
+                <li><strong>DELETE</strong> → removes records</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>INSERT adds data.</li>
+                    <li>UPDATE modifies data.</li>
+                    <li>DELETE removes data.</li>
+                    <li>Always use WHERE carefully with UPDATE and DELETE.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 5 -->
+        <div class="note-block" id="functions">
+
+            <h3>05. Functions & Aggregation 🧮</h3>
+
+            <p>
+                Aggregate functions perform calculations on multiple
+                rows and return a single result.
+            </p>
+
+            <pre><code>SELECT COUNT(*) FROM students;
+
+SELECT AVG(age) FROM students;
+
+SELECT MAX(age) FROM students;
+
+SELECT MIN(age) FROM students;
+
+SELECT SUM(age) FROM students;</code></pre>
+
+            <ul>
+                <li><strong>COUNT()</strong> → counts records</li>
+                <li><strong>SUM()</strong> → calculates total</li>
+                <li><strong>AVG()</strong> → calculates average</li>
+                <li><strong>MAX()</strong> → finds maximum value</li>
+                <li><strong>MIN()</strong> → finds minimum value</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>Aggregate functions work on multiple rows.</li>
+                    <li>COUNT counts records.</li>
+                    <li>AVG calculates the average.</li>
+                    <li>MAX and MIN find extreme values.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 6 -->
+        <div class="note-block" id="group-by">
+
+            <h3>06. GROUP BY & HAVING 📦</h3>
+
+            <p>
+                <strong>GROUP BY</strong> groups rows that have the same
+                values. <strong>HAVING</strong> filters grouped results.
+            </p>
+
+            <pre><code>SELECT age, COUNT(*)
+FROM students
+GROUP BY age;
+
+SELECT age, COUNT(*)
+FROM students
+GROUP BY age
+HAVING COUNT(*) > 1;</code></pre>
+
+            <ul>
+                <li><strong>GROUP BY</strong> → creates groups</li>
+                <li><strong>HAVING</strong> → filters groups</li>
+                <li>Aggregate functions are commonly used with GROUP BY</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>GROUP BY groups similar values.</li>
+                    <li>HAVING filters groups.</li>
+                    <li>WHERE filters rows before grouping.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 7 -->
+        <div class="note-block" id="joins">
+
+            <h3>07. SQL Joins 🔗</h3>
+
+            <p>
+                Joins are used to combine data from two or more related
+                tables.
+            </p>
+
+            <pre><code>SELECT students.name, courses.course_name
+FROM students
+INNER JOIN courses
+ON students.course_id = courses.id;</code></pre>
+
+            <ul>
+                <li><strong>INNER JOIN</strong> → returns matching records</li>
+                <li><strong>LEFT JOIN</strong> → keeps all records from the left table</li>
+                <li><strong>RIGHT JOIN</strong> → keeps all records from the right table</li>
+            </ul>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>Joins connect related tables.</li>
+                    <li>INNER JOIN returns matching records.</li>
+                    <li>LEFT JOIN keeps all rows from the left table.</li>
+                    <li>RIGHT JOIN keeps all rows from the right table.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Topic 8 -->
+        <div class="note-block" id="keys-design">
+
+            <h3>08. Keys & Database Design 🔑</h3>
+
+            <p>
+                Keys help identify records and create relationships
+                between tables.
+            </p>
+
+            <ul>
+                <li><strong>Primary Key</strong> → uniquely identifies a record.</li>
+                <li><strong>Foreign Key</strong> → connects one table to another.</li>
+                <li><strong>Relationships</strong> → describe how tables are connected.</li>
+            </ul>
+
+            <pre><code>CREATE TABLE courses (
+    id INT PRIMARY KEY,
+    course_name VARCHAR(50)
+);
+
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    course_id INT,
+    FOREIGN KEY (course_id)
+        REFERENCES courses(id)
+);</code></pre>
+
+            <div class="quick-revision">
+                <h3>Quick Revision ⚡</h3>
+                <ul>
+                    <li>Primary keys uniquely identify records.</li>
+                    <li>Foreign keys connect related tables.</li>
+                    <li>Good database design keeps data organized.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <!-- Final Revision -->
+        <div class="quick-revision">
+
+            <h3>SQL Quick Revision 🚀</h3>
+
+            <ul>
+                <li>SQL is used to work with databases.</li>
+                <li>SELECT retrieves data.</li>
+                <li>WHERE filters records.</li>
+                <li>ORDER BY sorts results.</li>
+                <li>INSERT, UPDATE and DELETE modify data.</li>
+                <li>Aggregate functions perform calculations.</li>
+                <li>GROUP BY creates groups.</li>
+                <li>Joins combine related tables.</li>
+                <li>Primary and foreign keys create database relationships.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Practice Section -->
+<section class="practice-section">
+
+    <div class="practice-box">
+
+        <div class="practice-icon">
+            💻
+        </div>
+
+        <div>
+
+            <span class="viva-label">
+                PRACTICE
+            </span>
+
+            <h2>
+                Ready to practice SQL?
+            </h2>
+
+            <p>
+                Start writing simple SQL queries and gradually
+                improve your database and problem-solving skills.
+            </p>
+
+            <a href="index.html#projects" class="btn">
+                Explore Projects →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>AI & DS Student Hub</h3>
+
+    <p>
+        Learn • Build • Prepare • Grow 🚀
+    </p>
+
+    <p class="copyright">
+        Made for students ❤️
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Viva Questions | AI & Data Science Student Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AI & DS Companion</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#viva">Viva</a>
+    </div>
+</nav>
+
+
+<section class="learning-hero">
+
+    <p class="section-label">🧠 VIVA PREPARATION</p>
+
+    <h1>DSA Viva Questions</h1>
+
+    <p>
+        Practice important Data Structures and Algorithms concepts
+        and prepare to explain them clearly in your viva.
+    </p>
+
+</section>
+
+
+<!-- DSA MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What does DSA stand for?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    🧠 A. Data Structures and Algorithms
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    💻 B. Digital System Applications
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    🌐 C. Data Software Architecture
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    📊 D. Digital Storage Algorithm
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+const questions = [
+
+    {
+        question: "What does DSA stand for?",
+        options: [
+            "Data Structures and Algorithms",
+            "Digital System Applications",
+            "Data Software Architecture",
+            "Digital Storage Algorithm"
+        ],
+        answer: 0,
+        explanation: "DSA stands for Data Structures and Algorithms. It helps us organize data efficiently and solve problems effectively."
+    },
+
+    {
+        question: "What is a data structure?",
+        options: [
+            "A way of organizing and storing data",
+            "A programming language",
+            "A computer operating system",
+            "A type of database software"
+        ],
+        answer: 0,
+        explanation: "A data structure is a way of organizing and storing data so that it can be accessed and modified efficiently."
+    },
+
+    {
+        question: "Which of the following is a linear data structure?",
+        options: [
+            "Array",
+            "Tree",
+            "Graph",
+            "Binary Tree"
+        ],
+        answer: 0,
+        explanation: "An array is a linear data structure because its elements are arranged sequentially."
+    },
+
+    {
+        question: "What is an array?",
+        options: [
+            "A collection of elements stored in a sequence",
+            "A collection of only functions",
+            "A type of operating system",
+            "A programming language"
+        ],
+        answer: 0,
+        explanation: "An array stores multiple elements of the same type in a sequential structure."
+    },
+
+    {
+        question: "What is a stack?",
+        options: [
+            "A data structure that follows LIFO",
+            "A data structure that follows FIFO",
+            "A type of database",
+            "A sorting algorithm"
+        ],
+        answer: 0,
+        explanation: "A stack follows LIFO, which means Last In, First Out."
+    },
+
+    {
+        question: "What does FIFO mean?",
+        options: [
+            "First In, First Out",
+            "First Input, Final Output",
+            "Fast Input, Fast Output",
+            "Final In, First Out"
+        ],
+        answer: 0,
+        explanation: "FIFO means First In, First Out. Queues commonly follow this principle."
+    },
+
+    {
+        question: "What is a queue?",
+        options: [
+            "A data structure that follows FIFO",
+            "A data structure that follows LIFO",
+            "A type of tree",
+            "A searching algorithm"
+        ],
+        answer: 0,
+        explanation: "A queue follows FIFO, meaning the element inserted first is removed first."
+    },
+
+    {
+        question: "What is an algorithm?",
+        options: [
+            "A step-by-step procedure for solving a problem",
+            "A type of computer hardware",
+            "A programming language",
+            "A database table"
+        ],
+        answer: 0,
+        explanation: "An algorithm is a finite sequence of well-defined steps used to solve a problem."
+    },
+
+    {
+        question: "What is searching in DSA?",
+        options: [
+            "Finding a particular element in a data structure",
+            "Deleting all data",
+            "Sorting a database",
+            "Creating a new programming language"
+        ],
+        answer: 0,
+        explanation: "Searching means finding whether a particular element exists in a data structure and, if possible, locating it."
+    },
+
+    {
+        question: "What is sorting?",
+        options: [
+            "Arranging data in a particular order",
+            "Deleting data from memory",
+            "Creating a new data structure",
+            "Converting data into code"
+        ],
+        answer: 0,
+        explanation: "Sorting arranges data according to a specific order, such as ascending or descending order."
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    answered = false;
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " +
+            question.options[index];
+
+        button.classList.remove("correct", "wrong");
+
+        button.disabled = false;
+    });
+
+    document.getElementById("feedback").classList.remove("show");
+
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("next-button").style.display = "none";
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    const feedback = document.getElementById("feedback");
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+
+    if (selectedIndex === question.answer) {
+
+        score++;
+
+        options[selectedIndex].classList.add("correct");
+
+        feedback.innerHTML =
+            "✅ <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        feedback.innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is <strong>" +
+            question.options[question.answer] +
+            "</strong>.<br><br>" +
+            question.explanation;
+    }
+
+
+    feedback.classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+    }
+}
+
+
+function showScore() {
+
+    const percentage =
+        Math.round((score / questions.length) * 100);
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <h2>🎉 Quiz Completed!</h2>
+
+            <p>
+                You scored
+                <strong>${score} / ${questions.length}</strong>
+                (${percentage}%)
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <button class="next-btn"
+                    onclick="window.location.href='viva.html'">
+                📚 Back to Viva Subjects
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    location.reload();
+}
+
+
+loadQuestion();
+
+</script>
+<footer>
+    <p>© 2026 AI & Data Science Student Companion</p>
+</footer>
+
+</body>
+</html>

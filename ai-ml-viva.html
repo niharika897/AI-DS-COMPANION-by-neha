@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & ML Viva Questions | AI & Data Science Student Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AI & DS Companion</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#viva">Viva</a>
+    </div>
+</nav>
+
+
+<section class="learning-hero">
+
+    <p class="section-label">🤖 VIVA PREPARATION</p>
+
+    <h1>AI & ML Viva Questions</h1>
+
+    <p>
+        Practice important Artificial Intelligence and Machine Learning
+        concepts and prepare to explain them with confidence.
+    </p>
+
+</section>
+
+<!-- AI & ML MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What is Artificial Intelligence?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    🤖 A. Technology that enables machines to perform intelligent tasks
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    🗄️ B. A type of database
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    🌐 C. A web development language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    🎨 D. A graphic design tool
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+
+const questions = [
+
+    {
+        question: "What is Artificial Intelligence?",
+        options: [
+            "Technology that enables machines to perform intelligent tasks",
+            "A type of database",
+            "A web development language",
+            "A graphic design tool"
+        ],
+        answer: 0,
+        explanation: "Artificial Intelligence enables machines to perform tasks that normally require human intelligence, such as learning, reasoning and decision-making."
+    },
+
+    {
+        question: "What is Machine Learning?",
+        options: [
+            "A method where computers learn from data",
+            "A type of computer hardware",
+            "A programming language",
+            "A database management system"
+        ],
+        answer: 0,
+        explanation: "Machine Learning is a branch of AI where computers learn patterns from data and use them to make predictions or decisions."
+    },
+
+    {
+        question: "Which of the following is a type of Machine Learning?",
+        options: [
+            "Supervised Learning",
+            "Web Development",
+            "Graphic Design",
+            "Operating System"
+        ],
+        answer: 0,
+        explanation: "Supervised Learning is one of the major types of Machine Learning, along with unsupervised and reinforcement learning."
+    },
+
+    {
+        question: "What is Supervised Learning?",
+        options: [
+            "Learning from labelled data",
+            "Learning without any data",
+            "Learning only from images",
+            "Learning from computer hardware"
+        ],
+        answer: 0,
+        explanation: "In supervised learning, the model learns from labelled data where the expected output is already known."
+    },
+
+    {
+        question: "What is Unsupervised Learning?",
+        options: [
+            "Learning from data without labelled outputs",
+            "Learning only from labelled data",
+            "Learning through a teacher",
+            "Learning a programming language"
+        ],
+        answer: 0,
+        explanation: "Unsupervised learning finds patterns or structures in data without predefined output labels."
+    },
+
+    {
+        question: "What is Regression in Machine Learning?",
+        options: [
+            "Predicting continuous numerical values",
+            "Grouping data into categories",
+            "Deleting data",
+            "Creating a database"
+        ],
+        answer: 0,
+        explanation: "Regression is used to predict continuous numerical values, such as price, temperature or salary."
+    },
+
+    {
+        question: "What is Classification in Machine Learning?",
+        options: [
+            "Predicting categories or classes",
+            "Predicting only numerical values",
+            "Storing data in tables",
+            "Creating websites"
+        ],
+        answer: 0,
+        explanation: "Classification assigns data to predefined categories, such as spam or not spam."
+    },
+
+    {
+        question: "Which is an example of Classification?",
+        options: [
+            "Predicting whether an email is spam",
+            "Predicting house price",
+            "Predicting temperature",
+            "Predicting monthly salary"
+        ],
+        answer: 0,
+        explanation: "Spam detection is a classification problem because the result belongs to categories such as spam or not spam."
+    },
+
+    {
+        question: "Which is an example of Regression?",
+        options: [
+            "Predicting the price of a house",
+            "Detecting spam emails",
+            "Recognizing whether an image is a cat or dog",
+            "Classifying students as pass or fail"
+        ],
+        answer: 0,
+        explanation: "House price is a continuous numerical value, so predicting it is a regression problem."
+    },
+
+    {
+        question: "What is the main purpose of Machine Learning?",
+        options: [
+            "To enable computers to learn patterns from data and make predictions or decisions",
+            "To replace computer hardware",
+            "To create only websites",
+            "To store files permanently"
+        ],
+        answer: 0,
+        explanation: "Machine Learning allows computers to learn from data and use those learned patterns to make useful predictions or decisions."
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+
+    answered = false;
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " +
+            question.options[index];
+
+        button.classList.remove("correct", "wrong");
+        button.disabled = false;
+    });
+
+    document.getElementById("feedback").classList.remove("show");
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("next-button").style.display = "none";
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+    const feedback = document.getElementById("feedback");
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+    if (selectedIndex === question.answer) {
+
+        score++;
+
+        options[selectedIndex].classList.add("correct");
+
+        feedback.innerHTML =
+            "✅ <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        feedback.innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is <strong>" +
+            question.options[question.answer] +
+            "</strong>.<br><br>" +
+            question.explanation;
+    }
+
+    feedback.classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+    }
+}
+
+
+function showScore() {
+
+    const percentage =
+        Math.round((score / questions.length) * 100);
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <h2>🎉 Quiz Completed!</h2>
+
+            <p>
+                You scored <strong>${score} / ${questions.length}</strong>
+                (${percentage}%)
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <button class="next-btn"
+                    onclick="window.location.href='viva.html'">
+                📚 Back to Viva Subjects
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    location.reload();
+}
+
+
+loadQuestion();
+
+</script>
+<footer>
+    <p>© 2026 AI & Data Science Student Companion</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Viva Questions | AI & Data Science Student Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AI & DS Companion</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#viva">Viva</a>
+    </div>
+</nav>
+
+
+<section class="learning-hero">
+
+    <p class="section-label">🗄️ VIVA PREPARATION</p>
+
+    <h1>SQL Viva Questions</h1>
+
+    <p>
+        Practice important SQL concepts and prepare yourself
+        to explain database fundamentals confidently.
+    </p>
+
+</section>
+<!-- SQL MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What does SQL stand for?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    🗄️ A. Structured Query Language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    💻 B. Simple Question Language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    🌐 C. Standard Query Link
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    📊 D. System Query Language
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 AI & Data Science Student Companion</p>
+</footer>
+<script>
+
+const questions = [
+
+    {
+        question: "What is SQL?",
+        options: [
+            "🗄️ A. Structured Query Language",
+            "💻 B. Simple Question Language",
+            "🌐 C. Standard Query Link",
+            "📊 D. System Query Language"
+        ],
+        answer: 0,
+        explanation: "SQL stands for Structured Query Language. It is used to communicate with relational databases and to create, read, update and delete data."
+    },
+
+    {
+        question: "What is a database?",
+        options: [
+            "📋 A. A programming language",
+            "🗄️ B. An organized collection of data",
+            "🌐 C. A web browser",
+            "🎨 D. A design tool"
+        ],
+        answer: 1,
+        explanation: "A database is an organized collection of data that can be stored, managed and retrieved efficiently."
+    },
+
+    {
+        question: "What is a table in a database?",
+        options: [
+            "🔢 A. A programming function",
+            "🌐 B. A type of website",
+            "📊 C. A structure that stores data in rows and columns",
+            "💻 D. A database software"
+        ],
+        answer: 2,
+        explanation: "A table is used to store data in rows and columns. A row represents a record, while a column represents an attribute."
+    },
+
+    {
+        question: "What is the SELECT statement used for?",
+        options: [
+            "🗑️ A. Deleting a table",
+            "🔍 B. Retrieving data from a database",
+            "🔐 C. Creating a password",
+            "📦 D. Creating a programming object"
+        ],
+        answer: 1,
+        explanation: "The SELECT statement is used to retrieve data from a database table."
+    },
+
+    {
+        question: "What is the purpose of the WHERE clause?",
+        options: [
+            "🔍 A. To filter records based on a condition",
+            "🗑️ B. To delete a database",
+            "📊 C. To create a table",
+            "🔗 D. To connect two databases"
+        ],
+        answer: 0,
+        explanation: "The WHERE clause is used to filter records based on a specified condition."
+    },
+
+    {
+        question: "What is a primary key?",
+        options: [
+            "🔗 A. A column that connects two tables",
+            "🔑 B. A column or combination of columns that uniquely identifies each record",
+            "📊 C. A column used only for calculations",
+            "🗑️ D. A command used to delete records"
+        ],
+        answer: 1,
+        explanation: "A primary key uniquely identifies each record in a table and cannot contain duplicate values."
+    },
+
+    {
+        question: "What is a foreign key?",
+        options: [
+            "🔗 A. A column that creates a relationship between two tables",
+            "🔑 B. A column that must contain unique values",
+            "📊 C. A command used to group records",
+            "🗑️ D. A command used to remove a table"
+        ],
+        answer: 0,
+        explanation: "A foreign key creates a relationship between two tables. It usually refers to the primary key of another table."
+    },
+
+    {
+        question: "What is a JOIN used for?",
+        options: [
+            "🗑️ A. Removing records",
+            "📊 B. Grouping records",
+            "🔗 C. Combining data from multiple tables",
+            "🔐 D. Protecting a database"
+        ],
+        answer: 2,
+        explanation: "A JOIN combines data from multiple tables based on a related column. Common types include INNER JOIN, LEFT JOIN, RIGHT JOIN and FULL JOIN."
+    },
+
+    {
+        question: "What is the difference between DELETE and DROP?",
+        options: [
+            "🗑️ A. DELETE removes records, while DROP removes a database object",
+            "🔄 B. DELETE creates records, while DROP updates records",
+            "📊 C. Both commands only retrieve data",
+            "🔗 D. DROP removes records, while DELETE creates tables"
+        ],
+        answer: 0,
+        explanation: "DELETE removes records from a table, while DROP removes a database object such as a table itself."
+    },
+
+    {
+        question: "What is GROUP BY used for?",
+        options: [
+            "🔍 A. Filtering individual records",
+            "🗑️ B. Deleting records",
+            "📊 C. Grouping rows that have the same values",
+            "🔗 D. Connecting two tables"
+        ],
+        answer: 2,
+        explanation: "GROUP BY groups rows that have the same values in specified columns. It is commonly used with COUNT(), SUM(), AVG(), MAX() and MIN()."
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.innerHTML = question.options[index];
+
+        button.classList.remove("correct", "wrong");
+
+        button.disabled = false;
+
+    });
+
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("feedback").classList.remove("show");
+
+    document.getElementById("next-button").style.display = "none";
+
+    answered = false;
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    if (selectedIndex === question.answer) {
+
+        options[selectedIndex].classList.add("correct");
+
+        score++;
+
+        document.getElementById("feedback").innerHTML =
+            "🎉 <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        document.getElementById("feedback").innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is highlighted in green.<br><br>" +
+            question.explanation;
+    }
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("feedback").classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+
+    }
+}
+
+
+function showScore() {
+
+    const percentage = Math.round(
+        (score / questions.length) * 100
+    );
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <div style="font-size:55px;">🎉</div>
+
+            <h2>SQL Quiz Completed!</h2>
+
+            <p>
+                You scored <strong>${score}</strong>
+                out of <strong>${questions.length}</strong>
+            </p>
+
+            <p>
+                Your Score: <strong>${percentage}%</strong>
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <a href="viva.html"
+               class="next-btn"
+               style="text-decoration:none;">
+                📚 Back to Viva Subjects
+            </a>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question"></div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(0)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(1)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(2)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(3)">
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    `;
+
+    loadQuestion();
+}
+
+
+loadQuestion();
+
+</script>
+</body>
+</html>

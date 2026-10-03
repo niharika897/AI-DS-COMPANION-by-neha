@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Viva | AI & Data Science Student Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            AI & DS Student Hub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="index.html#resources">Resources</a>
+
+            <a href="index.html#projects">Projects</a>
+
+            <a href="index.html#viva">Viva</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="learning-hero">
+
+        <p class="small-title">
+            ☕ VIVA PREPARATION
+        </p>
+
+        <h1>
+            Java Viva Questions
+        </h1>
+
+        <p>
+            Practice important Java concepts and prepare
+            yourself for your next programming viva.
+        </p>
+
+    </section>
+
+
+    <!-- Java Questions -->
+<!-- Java MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What is Java?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    ☕ A. A programming language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    🌐 B. A web browser
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    🗄️ C. A database
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    🎨 D. A design software
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+       <!-- Footer -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>
+                    AI & Data Science Student Hub 💜
+                </h2>
+
+                <p>
+                    Learn. Build. Practice. Grow.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                Made with 💜 for AI & Data Science students
+            </p>
+
+            <p>
+                © 2026 Student Hub
+            </p>
+
+        </div>
+
+    </footer>
+
+<script>
+
+const questions = [
+
+    {
+        question: "What is Java?",
+        options: [
+            "☕ A. A programming language",
+            "🌐 B. A web browser",
+            "🗄️ C. A database",
+            "🎨 D. A design software"
+        ],
+        answer: 0,
+        explanation: "Java is a high-level, object-oriented programming language."
+    },
+
+    {
+        question: "What is one important feature of Java?",
+        options: [
+            "🚫 A. It does not support OOP",
+            "💻 B. Platform independence",
+            "🔒 C. It can run only on one operating system",
+            "❌ D. It has no exception handling"
+        ],
+        answer: 1,
+        explanation: "Java is known for platform independence. Java programs run on the JVM, allowing the same bytecode to run on different platforms."
+    },
+
+    {
+        question: "What does JVM stand for?",
+        options: [
+            "📦 A. Java Variable Method",
+            "⚙️ B. Java Virtual Machine",
+            "🌐 C. Java Visual Model",
+            "💻 D. Java Version Manager"
+        ],
+        answer: 1,
+        explanation: "JVM stands for Java Virtual Machine. It executes Java bytecode."
+    },
+
+    {
+        question: "What is a class in Java?",
+        options: [
+            "🏗️ A. A blueprint for creating objects",
+            "🔁 B. A loop",
+            "💾 C. A database",
+            "❌ D. An error"
+        ],
+        answer: 0,
+        explanation: "A class is a blueprint or template used to create objects."
+    },
+
+    {
+        question: "What is an object in Java?",
+        options: [
+            "📖 A. A programming language",
+            "🔧 B. An instance of a class",
+            "🌐 C. A browser",
+            "🔁 D. A loop"
+        ],
+        answer: 1,
+        explanation: "An object is an instance of a class. It represents a real or logical entity created from the class."
+    },
+
+    {
+        question: "Which concept allows a class to acquire properties of another class?",
+        options: [
+            "🔒 A. Encapsulation",
+            "🎭 B. Polymorphism",
+            "🧬 C. Inheritance",
+            "🛡️ D. Abstraction"
+        ],
+        answer: 2,
+        explanation: "Inheritance allows one class to acquire properties and behaviors from another class."
+    },
+
+    {
+        question: "What is encapsulation?",
+        options: [
+            "🔐 A. Combining data and methods into a single unit",
+            "🔁 B. Repeating a block of code",
+            "🧬 C. Creating a child class",
+            "💻 D. Running Java bytecode"
+        ],
+        answer: 0,
+        explanation: "Encapsulation means wrapping data and the methods that operate on that data into a single unit, such as a class."
+    },
+
+    {
+        question: "What is method overloading?",
+        options: [
+            "🔄 A. Having methods with the same name but different parameters",
+            "🧬 B. Creating a new class",
+            "💾 C. Storing data in a database",
+            "❌ D. Handling runtime errors"
+        ],
+        answer: 0,
+        explanation: "Method overloading means having multiple methods with the same name but different parameter lists."
+    },
+
+    {
+        question: "Which keyword is used to create an object in Java?",
+        options: [
+            "🔑 A. class",
+            "✨ B. new",
+            "📦 C. object",
+            "⚙️ D. create"
+        ],
+        answer: 1,
+        explanation: "The new keyword is used to create an object of a class in Java."
+    },
+
+    {
+        question: "What is exception handling used for in Java?",
+        options: [
+            "🎨 A. Designing a user interface",
+            "🔁 B. Repeating code",
+            "🛡️ C. Handling runtime errors",
+            "💾 D. Storing variables"
+        ],
+        answer: 2,
+        explanation: "Exception handling allows a Java program to handle runtime errors using mechanisms such as try, catch and finally."
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.innerHTML = question.options[index];
+
+        button.classList.remove("correct", "wrong");
+
+        button.disabled = false;
+
+    });
+
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("feedback").classList.remove("show");
+
+    document.getElementById("next-button").style.display = "none";
+
+    answered = false;
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    if (selectedIndex === question.answer) {
+
+        options[selectedIndex].classList.add("correct");
+
+        score++;
+
+        document.getElementById("feedback").innerHTML =
+            "🎉 <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        document.getElementById("feedback").innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is highlighted in green.<br><br>" +
+            question.explanation;
+    }
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("feedback").classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+
+    }
+}
+
+
+function showScore() {
+
+    const percentage = Math.round(
+        (score / questions.length) * 100
+    );
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <div style="font-size:55px;">🎉</div>
+
+            <h2>Java Quiz Completed!</h2>
+
+            <p>
+                You scored <strong>${score}</strong>
+                out of <strong>${questions.length}</strong>
+            </p>
+
+            <p>
+                Your Score: <strong>${percentage}%</strong>
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <a href="viva.html"
+               class="next-btn"
+               style="text-decoration:none;">
+                📚 Back to Viva Subjects
+            </a>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question"></div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(0)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(1)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(2)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(3)">
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    `;
+
+    loadQuestion();
+}
+
+
+loadQuestion();
+
+</script>
+</body>
+
+</html>

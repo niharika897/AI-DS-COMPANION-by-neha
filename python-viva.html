@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Viva | AI & Data Science Student Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            AI & DS Student Hub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="index.html#resources">Resources</a>
+
+            <a href="index.html#projects">Projects</a>
+
+            <a href="index.html#viva">Viva</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="learning-hero">
+
+        <p class="small-title">
+            🐍 VIVA PREPARATION
+        </p>
+
+        <h1>
+            Python Viva Questions
+        </h1>
+
+        <p>
+            Practice commonly asked Python questions and
+            prepare yourself to answer with confidence.
+        </p>
+
+    </section>
+
+
+    <!-- Questions -->
+
+   <!-- Python MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What is Python?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    🐍 A. A high-level programming language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    🌐 B. A web browser
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    🗄️ C. A database system
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    🎨 D. A graphic design tool
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn" id="next-button" onclick="nextQuestion()" style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>
+                    AI & Data Science Student Hub 💜
+                </h2>
+
+                <p>
+                    Learn. Build. Practice. Grow.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                Made with 💜 for AI & Data Science students
+            </p>
+
+            <p>
+                © 2026 Student Hub
+            </p>
+
+        </div>
+
+    </footer>
+<script>
+
+const questions = [
+
+    {
+        question: "What is Python?",
+        options: [
+            "🐍 A. A high-level programming language",
+            "🌐 B. A web browser",
+            "🗄️ C. A database system",
+            "🎨 D. A graphic design tool"
+        ],
+        answer: 0,
+        explanation: "Python is a high-level, interpreted and general-purpose programming language known for its simple and readable syntax."
+    },
+
+    {
+        question: "Which of the following is a feature of Python?",
+        options: [
+            "🔒 A. It requires explicit data type declaration",
+            "📖 B. It has easy and readable syntax",
+            "🚫 C. It has no standard library",
+            "1️⃣ D. It supports only one programming style"
+        ],
+        answer: 1,
+        explanation: "Python is known for its easy and readable syntax. It is also high-level, interpreted and supports multiple programming paradigms."
+    },
+
+    {
+        question: "What is a variable in Python?",
+        options: [
+            "💾 A. A name used to store a value",
+            "🔁 B. A type of loop",
+            "⚙️ C. A reusable function",
+            "🏗️ D. A class"
+        ],
+        answer: 0,
+        explanation: "A variable is a name used to store a value. Python does not require us to explicitly declare the data type."
+    },
+
+    {
+        question: "Which of these contains basic Python data types?",
+        options: [
+            "🌐 A. HTML, CSS, SQL, Java",
+            "🔢 B. int, float, str, bool",
+            "📱 C. Android, iOS, Windows",
+            "🎨 D. Red, Blue, Green, Yellow"
+        ],
+        answer: 1,
+        explanation: "Some basic Python data types are int, float, str and bool. Python also has list, tuple, set and dictionary."
+    },
+
+    {
+        question: "What is the main difference between a list and a tuple?",
+        options: [
+            "🔄 A. A list is mutable and a tuple is immutable",
+            "🔒 B. Both are immutable",
+            "🔢 C. A list stores only numbers",
+            "✏️ D. A tuple is mutable and a list is immutable"
+        ],
+        answer: 0,
+        explanation: "A list can be changed after creation, so it is mutable. A tuple cannot be changed after creation, so it is immutable."
+    },
+
+    {
+        question: "What is a function in Python?",
+        options: [
+            "📦 A. A data type",
+            "🔁 B. A loop",
+            "⚙️ C. A reusable block of code for a specific task",
+            "❌ D. An error"
+        ],
+        answer: 2,
+        explanation: "A function is a reusable block of code designed to perform a specific task."
+    },
+
+    {
+        question: "What is the purpose of a loop?",
+        options: [
+            "💾 A. To store a value",
+            "🏗️ B. To create a class",
+            "❌ C. To handle errors",
+            "🔁 D. To repeatedly execute a block of code"
+        ],
+        answer: 3,
+        explanation: "A loop repeatedly executes a block of code. Python commonly uses for and while loops."
+    },
+
+    {
+        question: "What does OOP stand for?",
+        options: [
+            "🧠 A. Object-Oriented Programming",
+            "🌐 B. Online Operating Program",
+            "💻 C. Object Output Process",
+            "📂 D. Open Object Protocol"
+        ],
+        answer: 0,
+        explanation: "OOP stands for Object-Oriented Programming. Important concepts include classes, objects, encapsulation, inheritance, polymorphism and abstraction."
+    },
+
+    {
+        question: "Which statement correctly describes a class and an object?",
+        options: [
+            "🔄 A. An object is a blueprint and a class is its instance",
+            "🏗️ B. A class is a blueprint and an object is an instance of that class",
+            "📦 C. Both are variables",
+            "⚙️ D. Both are functions"
+        ],
+        answer: 1,
+        explanation: "A class is a blueprint used to create objects. An object is an instance of a class."
+    },
+
+    {
+        question: "What is exception handling used for?",
+        options: [
+            "🔁 A. Repeating code",
+            "💾 B. Storing data",
+            "🛡️ C. Handling errors that occur while a program is running",
+            "⚙️ D. Creating functions"
+        ],
+        answer: 2,
+        explanation: "Exception handling is used to handle runtime errors. Python uses try, except, else and finally for exception handling."
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.innerHTML = question.options[index];
+
+        button.classList.remove("correct", "wrong");
+
+        button.disabled = false;
+
+    });
+
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("feedback").classList.remove("show");
+
+    document.getElementById("next-button").style.display = "none";
+
+    answered = false;
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    if (selectedIndex === question.answer) {
+
+        options[selectedIndex].classList.add("correct");
+
+        score++;
+
+        document.getElementById("feedback").innerHTML =
+            "🎉 <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        document.getElementById("feedback").innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is highlighted in green.<br><br>" +
+            question.explanation;
+    }
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("feedback").classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+
+    }
+}
+
+
+function showScore() {
+
+    const percentage = Math.round(
+        (score / questions.length) * 100
+    );
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <div style="font-size:55px;">🎉</div>
+
+            <h2>Quiz Completed!</h2>
+
+            <p>
+                You scored <strong>${score}</strong>
+                out of <strong>${questions.length}</strong>
+            </p>
+
+            <p>
+                Your Score: <strong>${percentage}%</strong>
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <a href="viva.html"
+               class="next-btn"
+               style="text-decoration:none;">
+                📚 Back to Viva Subjects
+            </a>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question"></div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(0)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(1)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(2)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(3)">
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    `;
+
+    loadQuestion();
+}
+
+
+loadQuestion();
+
+</script>
+
+</body>
+
+</html>

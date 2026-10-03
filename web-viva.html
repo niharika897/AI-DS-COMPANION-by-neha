@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Development Viva | AI & Data Science Student Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            AI & DS Student Hub
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="index.html#resources">Resources</a>
+
+            <a href="index.html#projects">Projects</a>
+
+            <a href="index.html#viva">Viva</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="learning-hero">
+
+        <p class="small-title">
+            🌐 VIVA PREPARATION
+        </p>
+
+        <h1>
+            Web Development Viva Questions
+        </h1>
+
+        <p>
+            Revise important HTML and CSS concepts and
+            prepare for your web development viva.
+        </p>
+
+    </section>
+
+
+    <!-- Questions -->
+<!-- Web Development MCQ Quiz -->
+
+<section class="quiz-section">
+
+    <div class="quiz-container">
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question">
+                What does HTML stand for?
+            </div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option" onclick="selectAnswer(0)">
+                    🌐 A. HyperText Markup Language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(1)">
+                    🎨 B. HyperText Machine Language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(2)">
+                    💻 C. HighText Modern Language
+                </button>
+
+                <button class="quiz-option" onclick="selectAnswer(3)">
+                    📱 D. Hyper Tool Markup Language
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+       <!-- Footer -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>
+                    AI & Data Science Student Hub 💜
+                </h2>
+
+                <p>
+                    Learn. Build. Practice. Grow.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                Made with 💜 for AI & Data Science students
+            </p>
+
+            <p>
+                © 2026 Student Hub
+            </p>
+
+        </div>
+
+    </footer>
+
+<script>
+
+const questions = [
+
+    {
+        question: "What does HTML stand for?",
+        options: [
+            "🌐 A. HyperText Markup Language",
+            "🎨 B. HyperText Machine Language",
+            "💻 C. HighText Modern Language",
+            "📱 D. Hyper Tool Markup Language"
+        ],
+        answer: 0,
+        explanation: "HTML stands for HyperText Markup Language. It is used to structure content on web pages."
+    },
+
+    {
+        question: "What is the main purpose of HTML?",
+        options: [
+            "🎨 A. To style a webpage",
+            "🏗️ B. To structure the content of a webpage",
+            "🗄️ C. To store database records",
+            "⚙️ D. To run server programs"
+        ],
+        answer: 1,
+        explanation: "HTML provides the structure of a webpage using elements such as headings, paragraphs, links, images and forms."
+    },
+
+    {
+        question: "What does CSS stand for?",
+        options: [
+            "💻 A. Computer Style System",
+            "🎨 B. Cascading Style Sheets",
+            "🌐 C. Creative Styling System",
+            "📱 D. Colorful Style Sheets"
+        ],
+        answer: 1,
+        explanation: "CSS stands for Cascading Style Sheets. It is used to control the appearance and layout of web pages."
+    },
+
+    {
+        question: "Which HTML tag is used to create a hyperlink?",
+        options: [
+            "🔗 A. <a>",
+            "🖼️ B. <img>",
+            "📄 C. <p>",
+            "📦 D. <div>"
+        ],
+        answer: 0,
+        explanation: "The <a> tag, also called the anchor tag, is used to create hyperlinks in HTML."
+    },
+
+    {
+        question: "Which HTML tag is used to display an image?",
+        options: [
+            "🔗 A. <a>",
+            "🖼️ B. <img>",
+            "📝 C. <image>",
+            "📦 D. <picturebox>"
+        ],
+        answer: 1,
+        explanation: "The <img> tag is used to embed an image in an HTML page."
+    },
+
+    {
+        question: "Which CSS property is used to change the background color?",
+        options: [
+            "🎨 A. background-color",
+            "✏️ B. text-color",
+            "🌈 C. color-background",
+            "🖌️ D. bg-style"
+        ],
+        answer: 0,
+        explanation: "The CSS property background-color is used to set the background color of an element."
+    },
+
+    {
+        question: "What is responsive web design?",
+        options: [
+            "📱 A. Designing websites that adapt to different screen sizes",
+            "💻 B. Designing only for computers",
+            "🎨 C. Adding more colors to a website",
+            "🗄️ D. Connecting a website to a database"
+        ],
+        answer: 0,
+        explanation: "Responsive web design allows a website's layout to adapt to different devices and screen sizes."
+    },
+
+    {
+        question: "Which technology is mainly used to add interactivity to web pages?",
+        options: [
+            "🏗️ A. HTML",
+            "🎨 B. CSS",
+            "⚡ C. JavaScript",
+            "🗄️ D. SQL"
+        ],
+        answer: 2,
+        explanation: "JavaScript is commonly used to add interactive and dynamic behavior to web pages."
+    },
+
+    {
+        question: "What is the purpose of a <div> element?",
+        options: [
+            "📦 A. To group and structure HTML content",
+            "🖼️ B. To display only images",
+            "🔗 C. To create only hyperlinks",
+            "🎵 D. To play audio only"
+        ],
+        answer: 0,
+        explanation: "The <div> element is a general-purpose container used to group and organize content in an HTML document."
+    },
+
+    {
+        question: "What is a web browser?",
+        options: [
+            "🌐 A. Software used to access and display web pages",
+            "🗄️ B. A database management system",
+            "🎨 C. A programming language",
+            "⚙️ D. A CSS framework"
+        ],
+        answer: 0,
+        explanation: "A web browser is software such as Chrome, Edge or Firefox that is used to access and display websites."
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function loadQuestion() {
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("question-number").textContent =
+        currentQuestion + 1;
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    options.forEach((button, index) => {
+
+        button.innerHTML = question.options[index];
+
+        button.classList.remove("correct", "wrong");
+
+        button.disabled = false;
+
+    });
+
+    document.getElementById("feedback").innerHTML = "";
+
+    document.getElementById("feedback").classList.remove("show");
+
+    document.getElementById("next-button").style.display = "none";
+
+    answered = false;
+}
+
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+    const question = questions[currentQuestion];
+
+    const options = document.querySelectorAll(".quiz-option");
+
+    if (selectedIndex === question.answer) {
+
+        options[selectedIndex].classList.add("correct");
+
+        score++;
+
+        document.getElementById("feedback").innerHTML =
+            "🎉 <strong>Correct!</strong><br>" +
+            question.explanation;
+
+    } else {
+
+        options[selectedIndex].classList.add("wrong");
+
+        options[question.answer].classList.add("correct");
+
+        document.getElementById("feedback").innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "The correct answer is highlighted in green.<br><br>" +
+            question.explanation;
+    }
+
+    options.forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("feedback").classList.add("show");
+
+    document.getElementById("next-button").style.display = "block";
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showScore();
+
+    }
+}
+
+
+function showScore() {
+
+    const percentage = Math.round(
+        (score / questions.length) * 100
+    );
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-score">
+
+            <div style="font-size:55px;">🎉</div>
+
+            <h2>Web Development Quiz Completed!</h2>
+
+            <p>
+                You scored <strong>${score}</strong>
+                out of <strong>${questions.length}</strong>
+            </p>
+
+            <p>
+                Your Score: <strong>${percentage}%</strong>
+            </p>
+
+            <button class="next-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <a href="viva.html"
+               class="next-btn"
+               style="text-decoration:none;">
+                📚 Back to Viva Subjects
+            </a>
+
+        </div>
+
+    `;
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.querySelector(".quiz-container").innerHTML = `
+
+        <div class="quiz-progress">
+            QUESTION <span id="question-number">1</span> / 10
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-question" id="question"></div>
+
+            <div class="quiz-options">
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(0)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(1)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(2)">
+                </button>
+
+                <button class="quiz-option"
+                        onclick="selectAnswer(3)">
+                </button>
+
+            </div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button class="next-btn"
+                    id="next-button"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                Next Question →
+            </button>
+
+        </div>
+
+    `;
+
+    loadQuestion();
+}
+
+
+loadQuestion();
+
+</script>
+</body>
+
+</html>
